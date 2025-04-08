@@ -81,15 +81,12 @@ with sync_playwright() as playwright:
     page.goto("http://localhost:5500")
     
     # Log in steps
-    page.get_by_placeholder("someone@.com").click()
-    page.get_by_placeholder("someone@.com").fill(config.user_brugernavn)
-    page.get_by_placeholder("someone@.com").press("Enter")
-    page.get_by_placeholder("User ID").click()
-    page.get_by_placeholder("User ID").fill(config.user_brugernavn)
-    page.get_by_placeholder("User ID").press("Tab")
-    page.get_by_placeholder("Adgangskode").fill(config.user_adgangskode)
-    page.get_by_placeholder("Adgangskode").press("Enter")
-    page.get_by_role("button", name="Ja").click()
+    page.click("[id=username]")
+    page.fill("[id=username]", config.user_brugernavn)
+    page.press("[id=username]", "Tab")
+    page.get_by_placeholder("Password").fill(config.user_adgangskode)
+    page.get_by_placeholder("Password").press("Enter")
+    
     page.locator("[id=\"\\31 01\"]").click()
     page.get_by_text("Nuværende lønperiode").click()
     page.get_by_text(periode).click()
