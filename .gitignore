@@ -1,0 +1,27 @@
+#Envoriment
+.venv
+
+#config
+config.py
+.vscode
+
+#temp files
+__pycache__
+
+#Dist files
+build
+Dist
+
+#hide
+clean.spec
+Chatgpt2.py
+Chatgpt.py
+Backup.py
+Connect.py
+Jeppe mytime.txt
+Playwrightstandard.py
+Selenium.py
+test.py
+UKG - ics cal.zip
+vagtplan.ics
+Test

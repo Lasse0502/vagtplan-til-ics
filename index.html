@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Login Form HTML CSS | CodingNepal</title>
+    <link rel="stylesheet" href="mockup hjemmeside/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title"><span>Login Form</span></div>
+        <form id="loginForm" action="#">
+            <div class="row">
+                <i class="fas fa-user"></i>
+                <input type="text" id="username" placeholder="Email or Phone" required />
+            </div>
+            <div class="row">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="Password" required />
+            </div>
+            <div class="pass"><a href="#">Forgot password?</a></div>
+            <div class="row button">
+                <input type="submit" value="Login" />
+            </div>
+            <div class="signup-link">Not a member? <a href="#">Signup now</a></div>
+        </form>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+
+        // Simpel liste af godkendte brugere (i et rigtigt system bør dette IKKE hardcodes)
+        const authorizedUsers = {
+            "testuser": "1337",
+            "anotheruser@example.com": "securepassword"
+        };
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Forhindrer standard form submit
+
+            const enteredUsername = usernameInput.value;
+            const enteredPassword = passwordInput.value;
+
+            if (authorizedUsers.hasOwnProperty(enteredUsername) && authorizedUsers[enteredUsername] === enteredPassword) {
+                // Brugernavn og adgangskode er korrekte, omdiriger til en anden side
+                window.location.href = "mockup hjemmeside/dashboard.html"; // Erstat med navnet på din anden lokale fil
+            } else {
+                // Forkert brugernavn eller adgangskode, vis en fejlbesked (valgfrit)
+                alert("Forkert brugernavn eller adgangskode.");
+            }
+        });
+    </script>
+</body>
+</html>
