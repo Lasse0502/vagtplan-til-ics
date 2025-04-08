@@ -1,0 +1,128 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f6f8; /* Lys grå baggrund */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.vagtplan-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.vagtplan-header {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vagtplan-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.period-selector label {
+    margin-right: 5px;
+}
+
+.period-selector select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.header-actions i {
+    cursor: pointer;
+}
+
+.header-icons {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.table-wrapper {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Tillad horisontal scrolling hvis tabellen er bred */
+}
+
+.time-overview-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.time-overview-table th, .time-overview-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    white-space: nowrap; /* Undgå linjeskift i celler */
+}
+
+.time-overview-table th {
+    background-color: #f7f7f7;
+    font-weight: bold;
+    color: #333;
+}
+
+.time-overview-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.time-overview-table tbody tr td i.fa-plus-circle {
+    color: #007bff;
+    cursor: pointer;
+}
+
+.summary-row td {
+    font-weight: bold;
+    background-color: #f0f0f0;
+}
+
+.bottom-navigation {
+    background-color: white;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 8px 8px 0 0;
+    margin-top: 20px;
+}
+
+.bottom-navigation button {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.bottom-navigation button.active {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Skjul elementer med klassen "hidden" */
+.hidden {
+    display: none !important;
+}

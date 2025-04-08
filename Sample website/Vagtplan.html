@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vagtplan</title>
+    <link rel="stylesheet" href="vagtplan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <div class="vagtplan-container">
+        <header class="vagtplan-header">
+            <h2>Vagtplan</h2>
+            <div class="header-actions">
+                <div class="period-selector">
+                    <label for="period">Periode:</label>
+                    <select id="period">
+                        <option value="current">Nuværende periode (uge 15)</option>
+                        <option value="next">Næste periode (uge 16)</option>
+                    </select>
+                </div>
+                <span class="period-date">Indlæst: 13:57</span>
+                <div class="header-icons">
+                    <i class="fas fa-share-alt"></i>
+                    <i class="fas fa-cog"></i>
+                    <i class="fas fa-print"></i>
+                    <i class="fas fa-file-export"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="table-wrapper" id="current-period-table">
+            <table class="time-overview-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Dato</th>
+                        <th>Arbejdstid</th>
+                        <th>Fravær</th>
+                        <th>Ind</th>
+                        <th>Ud</th>
+                        <th>Overtid</th>
+                        <th>Ind</th>
+                        <th>Ud</th>
+                        <th>Overtid</th>
+                        <th>Samkøb</th>
+                        <th>Merarbejde</th>
+                        <th>Vagt</th>
+                        <th>Dagligt</th>
+                        <th>Periode</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><i class="fas fa-plus-circle"></i></td>
+                        <td>Man 07/04</td>
+                        <td>16:00 - 21:00</td>
+                        <td></td>
+                        <td>15:54</td>
+                        <td>16:32</td>
+                        <td></td>
+                        <td>17:02</td>
+                        <td>21:50</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-plus-circle"></i></td>
+                        <td>Tirs 07/04</td>
+                        <td>15:00 - 21:00</td>
+                        <td></td>
+                        <td>15:54</td>
+                        <td>16:32</td>
+                        <td></td>
+                        <td>17:02</td>
+                        <td>21:50</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-plus-circle"></i></td>
+                        <td>Ons 09/04</td>
+                        <td></td>
+                        <td></td>
+                        <td>15:54</td>
+                        <td>16:32</td>
+                        <td></td>
+                        <td>17:02</td>
+                        <td>21:50</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-plus-circle"></i></td>
+                        <td>Tors 10/04</td>
+                        <td>13:30 - 18:00</td>
+                        <td></td>
+                        <td>15:54</td>
+                        <td>16:32</td>
+                        <td></td>
+                        <td>17:02</td>
+                        <td>21:50</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-plus-circle"></i></td>
+                        <td>Fre 11/04</td>
+                        <td>14:00 - 20:00</td>
+                        <td></td>
+                        <td>15:54</td>
+                        <td>16:32</td>
+                        <td></td>
+                        <td>17:02</td>
+                        <td>21:50</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-plus-circle"></i></td>
+                        <td>Lør 12/04</td>
+                        <td>16:00 - 22:00</td>
+                        <td></td>
+                        <td>15:54</td>
+                        <td>16:32</td>
+                        <td></td>
+                        <td>17:02</td>
+                        <td>21:50</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-plus-circle"></i></td>
+                        <td>Søn 13/04</td>
+                        <td></td>
+                        <td></td>
+                        <td>15:54</td>
+                        <td>16:32</td>
+                        <td></td>
+                        <td>17:02</td>
+                        <td>21:50</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-wrapper hidden" id="next-period-table">
+            <table class="time-overview-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Dato</th>
+                        <th>Arbejdstid</th>
+                        <th>Fravær</th>
+                        <th>Ind</th>
+                        <th>Ud</th>
+                        <th>Overtid</th>
+                        <th>Ind</th>
+                        <th>Ud</th>
+                        <th>Overtid</th>
+                        <th>Samkøb</th>
+                        <th>Merarbejde</th>
+                        <th>Vagt</th>
+                        <th>Dagligt</th>
+                        <th>Periode</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><i class="fas fa-plus-circle"></i></td>
+                        <td>Man 14/04</td>
+                        <td>15:30 - 21:00</td>
+                        <td></td>
+                        <td>15:54</td>
+                        <td>16:32</td>
+                        <td></td>
+                        <td>17:02</td>
+                        <td>21:50</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-plus-circle"></i></td>
+                        <td>Tirs 15/04</td>
+                        <td>18:00 - 20:00</td>
+                        <td></td>
+                        <td>15:54</td>
+                        <td>16:32</td>
+                        <td></td>
+                        <td>17:02</td>
+                        <td>21:50</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-plus-circle"></i></td>
+                        <td>Ons 16/04</td>
+                        <td>15:00 - 21:00</td>
+                        <td></td>
+                        <td>15:54</td>
+                        <td>16:32</td>
+                        <td></td>
+                        <td>17:02</td>
+                        <td>21:50</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-plus-circle"></i></td>
+                        <td>Tors 17/04</td>
+                        <td>16:00 - 21:00</td>
+                        <td></td>
+                        <td>15:54</td>
+                        <td>16:32</td>
+                        <td></td>
+                        <td>17:02</td>
+                        <td>21:50</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-plus-circle"></i></td>
+                        <td>Fre 18/04</td>
+                        <td>16:00 - 21:00</td>
+                        <td></td>
+                        <td>15:54</td>
+                        <td>16:32</td>
+                        <td></td>
+                        <td>17:02</td>
+                        <td>21:50</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-plus-circle"></i></td>
+                        <td>Lør 19/04</td>
+                        <td></td>
+                        <td></td>
+                        <td>15:54</td>
+                        <td>16:32</td>
+                        <td></td>
+                        <td>17:02</td>
+                        <td>21:50</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-plus-circle"></i></td>
+                        <td>Søn 20/04</td>
+                        <td></td>
+                        <td></td>
+                        <td>15:54</td>
+                        <td>16:32</td>
+                        <td></td>
+                        <td>17:02</td>
+                        <td>21:50</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                        <td>4:58</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="bottom-navigation">
+            <button class="active">Timeoversigt</button>
+            <button>Fraværsanmodninger</button>
+            <button>Historiske anmodninger</button>
+            <button>Historik for fraværsændringer</button>
+            <button>Ferieoversigt</button>
+        </div>
+    </div>
+
+    <script>
+        const periodSelector = document.getElementById('period');
+        const currentPeriodTable = document.getElementById('current-period-table');
+        const nextPeriodTable = document.getElementById('next-period-table');
+
+        periodSelector.addEventListener('change', function() {
+            if (this.value === 'next') {
+                currentPeriodTable.classList.add('hidden');
+                nextPeriodTable.classList.remove('hidden');
+            } else {
+                currentPeriodTable.classList.remove('hidden');
+                nextPeriodTable.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

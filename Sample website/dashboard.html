@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medarbejderportal</title>
+    <link rel="stylesheet" href="Dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="initials">LV</span>
+            <span class="welcome">Hej Lasse - Velkommen tilbage til myTime</span>
+        </div>
+        <div class="user-actions">
+            <i class="fas fa-bell"></i>
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        <div class="card punch-card">
+            <div class="card-header">
+                <h2>Punch</h2>
+            </div>
+            <div class="card-body">
+                <p class="last-punch">Sidste stempling: 07/04/2025 21:00</p>
+                <div class="search-bar">
+                    <input type="text" placeholder="Søg medarbejder...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="button-group">
+                    <button class="primary">Indstempling - Punch In</button>
+                    <button>Udstempling - Punch Out</button>
+                    <a href="vagtplan.html"><button>Vagtplan</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card schedule-card">
+            <div class="card-header">
+                <h2>Min Arbejdsplan</h2>
+            </div>
+            <div class="card-body">
+                <div class="day-selector">
+                    <button><i class="fas fa-chevron-left"></i></button>
+                    <span>I dag</span>
+                    <button><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <ul class="schedule-list">
+                    <li>
+                        <strong>16:00 - 17:30 (1 t. 30 min.)</strong>
+                        <span>Firma</span>
+                        <span>Group Denmark </span>
+                        <span>G/Timeplan # 11 afdeling</span>
+                        <span>Grundforløb</span>
+                    </li>
+                    <li>
+                        <strong>17:30 - 18:00 (0 t. 30 min.)</strong>
+                        <span>Pause</span>
+                    </li>
+                    <li>
+                        <strong>18:00 - 21:00 (3 t. 00 min.)</strong>
+                        <span>Firma</span>
+                        <span>Group Denmark </span>
+                        <span>G/Timeplan # 11 afdeling</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card messages-card">
+            <div class="card-header">
+                <h2>Mine Meddelelser</h2>
+                <button><i class="fas fa-ellipsis-v"></i></button>
+            </div>
+            <div class="card-body">
+                <ul class="message-list">
+                    <li>
+                        <span>Vagtændring</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+                    <li>
+                        <span>Nybytte</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+                    <li>
+                        <span>Ledige vagter</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+                    <li>
+                        <span>Opgaver</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+                    <li>
+                        <span>Informationer</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+                    <li>
+                        <span>Meddelelser</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card period-time-card">
+            <div class="card-header">
+                <h2>Periodetimer</h2>
+            </div>
+            <div class="card-body">
+                <div class="chart">
+                    <div class="bar" style="height: 60%;"></div>
+                </div>
+                <div class="time-info">
+                    <span>30:00</span>
+                    <span>Mål: Begynder ved første vagt og til slut</span>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
