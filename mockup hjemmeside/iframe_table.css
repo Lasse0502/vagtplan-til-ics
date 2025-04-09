@@ -1,0 +1,66 @@
+/* iframe_table.css */
+
+body {
+    font-family: sans-serif;
+    margin: 20px; /* Tilføj lidt margin omkring tabellen i iframen */
+    background-color: #f9f9f9; /* En lys baggrundsfarve til iframen */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Fjern dobbeltlinjer mellem celler */
+    margin-bottom: 20px; /* Plads under tabellen */
+    background-color: #fff; /* Hvid baggrund til selve tabellen */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* En let skygge for at fremhæve tabellen */
+}
+
+thead th {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #ccc;
+    font-weight: bold;
+}
+
+tbody td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f5f5f5; /* En lysere baggrundsfarve for hver anden række */
+}
+
+tbody tr:hover {
+    background-color: #e0e0e0; /* Fremhæv rækken ved hover */
+    cursor: pointer; /* Vis en håndmarkør ved hover (valgfrit) */
+}
+
+/* Hvis du har brug for styling af specifikke kolonner */
+/*
+td:nth-child(1) {
+    font-weight: bold;
+}
+
+td:nth-child(3), td:nth-child(4) {
+    text-align: center;
+}
+*/
+
+/* Styling af links i tabellen (hvis der er nogen) */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Hvis tabellen er for bred og skal scrolles horisontalt i iframen */
+/*
+body {
+    overflow-x: auto;
+}
+*/

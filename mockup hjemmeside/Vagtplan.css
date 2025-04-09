@@ -64,6 +64,8 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow-x: auto; /* Tillad horisontal scrolling hvis tabellen er bred */
+    height: 600px; /* Juster højden efter behov */
+    overflow-y: auto;
 }
 
 .time-overview-table {
@@ -126,3 +128,5 @@ body {
 .hidden {
     display: none !important;
 }
+
+
