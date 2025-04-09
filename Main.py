@@ -86,10 +86,13 @@ with sync_playwright() as playwright:
     page.press("[id=username]", "Tab")
     page.get_by_placeholder("Password").fill(config.user_adgangskode)
     page.get_by_placeholder("Password").press("Enter")
-    
-    page.locator("[id=\"\\31 01\"]").click()
-    page.get_by_text("Nuværende lønperiode").click()
-    page.get_by_text(periode).click()
+    # Navigere til vagtplan og vælg ønsket periode
+    page.get_by_text("Vagtplan").click()
+    page.select_option("[id=period]", value="next")
+    #page.select_option("#period", value="next")
+
+   # page.get_by_text("Næste periode",exact=False).click()
+    #page.get_by_text(periode).click()
     #page.wait_for_timeout(1000)
 
     # Wait for the spinner to disappear, indicating the table has fully loaded
@@ -99,7 +102,7 @@ with sync_playwright() as playwright:
 
  # Scroll and capture the specific table using Python equivalent to your JavaScript approach
     table_selector = ".ui-grid-viewport"
-    table_selector = "#grid-wrapper"
+    html_selector = "#grid-wrapper"
     vagter = scrape_vagter(page, table_selector, html_selector)
 
     context.close()
