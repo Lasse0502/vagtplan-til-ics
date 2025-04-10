@@ -31,47 +31,50 @@ def scrape_vagter(page, table_selector):
         }
 
     count = 1
-    #Scroll funktion skrevet i javascript til scroll gennem tabel. Stopper automatisk når den rammer bunden. Henter html fra 
-    while total_height < page.evaluate(f"document.querySelectorAll('{table_selector}')[1].scrollHeight - document.querySelectorAll('{table_selector}')[1].clientHeight"):
-        page.evaluate(f"document.querySelectorAll('{table_selector}')[1].scrollBy(0, {distance})")
+    #Angiver variablen total height (længde der er scrollet) og fortæller der skal scrolles med distancen xx pr gang
+    total_height = 0 
+    distance = 400
+    #Scroll funktion skrevet i javascript til scroll gennem tabel. Stopper automatisk når den rammer bunden. Henter loadet html (tabel med lazyload)
+    while total_height < page.evaluate(f"document.querySelector('{table_selector}').scrollHeight - document.querySelector('{table_selector}').clientHeight"):
+        page.evaluate(f"document.querySelector('{table_selector}').scrollBy(0, {distance})")
         total_height += distance
-        current_html = page.inner_html('#grid-wrapper')
+        #Henter det loadet html og kører det gennem BeatifulSoup til at parse dataen til en mere brugbar form
+        current_html = page.inner_html(table_selector)
         soup = BeautifulSoup(current_html, 'html.parser')
 
-            # Extract rows and add only new rows
-        rows = soup.find_all(id=re.compile('\d_scheduleshift'))
+        #Finder alle rows der har et id der matcher regex i dette tilfælde alle rows med et id der indeholder "arbejdstid"
+        rows = soup.find_all(id=re.compile('\d_arbejdstid'))
 
-        #print(rows)
+        #For hver row der er fundet i den loadede html, så tjekker vi om den er blevet captured før. Hvis ikke så henter vi dataen og gemmer det i dictionaryen
         for row in rows:
-            #print(row)
             row_id = row.get('id')
-            #print(row_str)
             if row_id not in captured_rows:
-                row_title = row.get('title')
-                if row_title != "":
-                    #print(row.get('title'))
+                #Henter texten fra row for at se om der er en vagt, hvis den er tom kan den springes over
+                row_text = row.get_text()
+                #Omvendt if statement til at tjekke om der er en vagt i row_text og kun behandle den hvis der er en vagt
+                if row_text != "":
+                    #Splitter rækkens id og gemmer rækkens nummer så den kan bruges til at matche med datoen
                     row_number = row_id.split('_')[0]
-                    #print(row_number + "_date")
-                    row_2 = soup.find(id=row_number + "_date")
-                    dato_raw = row_2.get('title')
+                    #Finder rækkens dato ud fra kendte række nummer og viden om datoens id
+                    row_2 = soup.find(id=row_number + "_dato")
+                    dato_raw = row_2.get_text()
+                    #Fjerner mellemrum og splitter datoen vha. tidligere defineret funktion og gemmer kun datoen ikke ugedagen
                     dato = strip_split(dato_raw)[-1]
+                    #Ændre datoen til korrekt format (dd.mm) fra (dd/mm)
                     dato = dato.replace("/",".")
-                    starttid = strip_split(row_title)[0]
-                    sluttid = strip_split(row_title)[-1]
-                    
+                    #Fjerner igen mellemrum og splitter vagt texten og gemmer start og slut tid
+                    starttid = strip_split(row_text)[0]
+                    sluttid = strip_split(row_text)[-1]
+                    #Omskriver start og slut tid til ønsket format
                     start_tid = dato + " " + starttid
                     slut_tid = dato + " " + sluttid
-
-                    #Append data
+                    #Tilføjer data til dictionary
                     vagter["start_tid"].append(start_tid)
                     vagter["slut_tid"].append(slut_tid)
                     vagter["vagt_id"].append(count)
                     count += 1
-                    #count += 1
-                #print(row_title != "")
+                #Tilføjer rækkens id til listen over rækker der allerede er blevet behandlet så den samme række ikke bruges 2 gange
                 captured_rows.add(row_id)
-                #html_content.append(row)
-    #print(vagter)
     return vagter
 
 with sync_playwright() as playwright:
@@ -89,21 +92,82 @@ with sync_playwright() as playwright:
     # Navigere til vagtplan og vælg ønsket periode
     page.get_by_text("Vagtplan").click()
     page.select_option("[id=period]", value="next")
+    page.wait_for_timeout(2000)
     #page.select_option("#period", value="next")
 
    # page.get_by_text("Næste periode",exact=False).click()
     #page.get_by_text(periode).click()
     #page.wait_for_timeout(1000)
 
-    # Wait for the spinner to disappear, indicating the table has fully loaded
-    spinner_selector = "#spinnerCircles"
-    page.wait_for_selector(spinner_selector, state="hidden")  # Wait until the spinner is detached (gone)
+   
 
-
+    #print(page.content())
  # Scroll and capture the specific table using Python equivalent to your JavaScript approach
-    table_selector = ".ui-grid-viewport"
-    html_selector = "#grid-wrapper"
-    vagter = scrape_vagter(page, table_selector, html_selector)
+
+    table_selector = ".table-wrapper"
+    iframe = page.frame("vagtplan_tabel")
+    #print(iframe.content())
+    vagter = scrape_vagter(iframe, table_selector)
 
     context.close()
     browser.close()
+
+
+today = datetime.today()
+current_year = today.year
+current_month = today.month
+
+def determine_year(month_day, current_year, current_month):
+    shift_month = int(month_day.split('.')[1])
+    # Check if the current month is greater than 6 and the shift month is at least 4 months lower than the current month
+    if current_month > 6 and (current_month - shift_month) > 4:
+        return current_year + 1
+    elif current_month < 6 and (current_month - shift_month) < -4:
+        return current_year - 1
+    else:
+        return current_year
+    
+def create_datetime(month_day, time, current_year, current_month):
+    year = determine_year(month_day, current_year, current_month)
+    return pd.to_datetime(f'{month_day}.{year} {time}', format='%d.%m.%Y %H:%M')    
+
+
+vagter_df = pd.DataFrame(vagter)
+
+vagter_df["start_tid"] = vagter_df.apply(lambda row: create_datetime(row["start_tid"][:5],row["start_tid"][6:],current_year,current_month),axis =1)
+vagter_df["slut_tid"] = vagter_df.apply(lambda row: create_datetime(row["slut_tid"][:5],row["slut_tid"][6:],current_year,current_month),axis =1)
+
+#print(vagter_df)
+
+# Function to ensure datetime is naive
+def make_naive(dt):
+    if dt.tzinfo is not None:
+        return dt.replace(tzinfo=None)
+    return dt
+
+cal = Calendar()
+evt = Event()
+for index, row in vagter_df.iterrows():
+    evt = Event()
+    if row["start_tid"].month > current_month or (current_month - row["start_tid"].month) > 4:
+        evt.name = "Vagt"
+        evt.begin = row['start_tid']
+        evt.end = row['slut_tid']
+        cal.events.add(evt)
+    else: continue
+
+with open('vagtplan.ics', 'w') as f:
+    f.writelines(cal.serialize_iter())
+
+
+with open('vagtplan.ics', 'r') as f:
+    ics_data = f.read()
+
+# Replace timezone information with empty string
+ics_data = ics_data.replace('Z', '')
+
+# Write modified data back to file
+with open('vagtplan.ics', 'w') as f:
+    f.write(ics_data)
+
+print("Succesfuldt exporteret vagter")

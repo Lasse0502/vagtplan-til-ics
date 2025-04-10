@@ -20,19 +20,19 @@ def setup():
         if ask == "n":
             user_input_brugernavn = input("Indtast brugernavn ")
             user_input_adgangskode = input("Indtast adgangskode ")
-            vagtplan = input("Hvilken vagtplan vil du have? (aktuel/næste/forrige) ")
+            vagtplan = input("Hvilken vagtplan vil du have? (aktuel/næste/) ")
         elif ask == 'y':
             import config
             user_input_brugernavn = config.user_brugernavn
             user_input_adgangskode = config.user_adgangskode
-            vagtplan = input("Hvilken vagtplan vil du have? (aktuel/næste/forrige) ")
+            vagtplan = input("Hvilken vagtplan vil du have? (aktuel/næste/) ")
         else:
             print("Forkert input skriv y/n")
             exit() 
     else:
         user_input_brugernavn = input("Indtast brugernavn ")
         user_input_adgangskode = input("Indtast adgangskode ")
-        vagtplan = input("Hvilken vagtplan vil du have? (aktuel/næste/forrige) ")
+        vagtplan = input("Hvilken vagtplan vil du have? (aktuel/næste/) ")
 
     with open("config.py", "w") as file:
         try:
@@ -44,14 +44,9 @@ def setup():
     #print(type(vagtplan))
 
     if vagtplan == "næste":
-        periode = "Næste planlægningsperiode"
-        #print(periode)
+        periode = "next"
     elif vagtplan == "aktuel":    
-        periode = "Nuværende planlægningsperiode"
-        #print(periode)
-    elif vagtplan == "forrige":    
-        periode = "Tidligere planlægningsperiode"
-        #print(periode)    
+        periode = "current"  
     else: print("error")
     
     

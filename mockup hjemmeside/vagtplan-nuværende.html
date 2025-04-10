@@ -11,7 +11,7 @@
 <body>
     <div class="table-wrapper" id="current-period-table">
         <table class="time-overview-table">
-            <thead>
+            <thead class="time-overview-table thead">
                 <tr>
                     <th></th>
                     <th>Dato</th>
@@ -30,457 +30,474 @@
             </thead>
             <tbody class="time-overview-table tbody">
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Tirs 01/04</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>0:00</td>
+                    <td id="0_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="0_dato">Tirs 01/04</td>
+                    <td id="0_arbejdstid"></td>
+                    <td id="0_fravær"></td>
+                    <td id="0_ind"></td>
+                    <td id="0_ud"></td>
+                    <td id="0_overtid"></td>
+                    <td id="0_ind_1"></td>
+                    <td id="0_ud_1"></td>
+                    <td id="0_overtid_1"></td>
+                    <td id="0_vagt"></td>
+                    <td id="0_dagligt">0:00</td>
+                    <td id="0_periode">0:00</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Ons 02/04</td>
-                    <td>11:00 - 17:15</td>
-                    <td></td>
-                    <td>10:56</td>
-                    <td>17:19</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:15</td>
-                    <td>6:15</td>
-                    <td>6:15</td>
+                    <td id="1_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="1_dato">Ons 02/04</td>
+                    <td id="1_arbejdstid">11:00 - 17:15</td>
+                    <td id="1_fravær"></td>
+                    <td id="1_ind">10:56</td>
+                    <td id="1_ud">17:19</td>
+                    <td id="1_overtid"></td>
+                    <td id="1_ind_1"></td>
+                    <td id="1_ud_1"></td>
+                    <td id="1_overtid_1"></td>
+                    <td id="1_vagt">6:15</td>
+                    <td id="1_dagligt">6:15</td>
+                    <td id="1_periode">6:15</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Tors 03/04</td>
-                    <td>14:30 - 20:45</td>
-                    <td></td>
-                    <td>14:27</td>
-                    <td>20:48</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:15</td>
-                    <td>6:15</td>
-                    <td>12:30</td>
+                    <td id="2_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="2_dato">Tors 03/04</td>
+                    <td id="2_arbejdstid">14:30 - 20:45</td>
+                    <td id="2_fravær"></td>
+                    <td id="2_ind">14:27</td>
+                    <td id="2_ud">20:48</td>
+                    <td id="2_overtid"></td>
+                    <td id="2_ind_1"></td>
+                    <td id="2_ud_1"></td>
+                    <td id="2_overtid_1"></td>
+                    <td id="2_vagt">6:15</td>
+                    <td id="2_dagligt">6:15</td>
+                    <td id="2_periode">12:30</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Fre 04/04</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>12:30</td>
+                    <td id="3_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="3_dato">Fre 04/04</td>
+                    <td id="3_arbejdstid"></td>
+                    <td id="3_fravær"></td>
+                    <td id="3_ind"></td>
+                    <td id="3_ud"></td>
+                    <td id="3_overtid"></td>
+                    <td id="3_ind_1"></td>
+                    <td id="3_ud_1"></td>
+                    <td id="3_overtid_1"></td>
+                    <td id="3_vagt"></td>
+                    <td id="3_dagligt"></td>
+                    <td id="3_periode">12:30</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Lør 05/04</td>
-                    <td>09:00 - 15:00</td>
-                    <td></td>
-                    <td>08:58</td>
-                    <td>15:03</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:00</td>
-                    <td>6:00</td>
-                    <td>18:30</td>
+                    <td id="4_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="4_dato">Lør 05/04</td>
+                    <td id="4_arbejdstid">09:00 - 15:00</td>
+                    <td id="4_fravær"></td>
+                    <td id="4_ind">08:58</td>
+                    <td id="4_ud">15:03</td>
+                    <td id="4_overtid"></td>
+                    <td id="4_ind_1"></td>
+                    <td id="4_ud_1"></td>
+                    <td id="4_overtid_1"></td>
+                    <td id="4_vagt">6:00</td>
+                    <td id="4_dagligt">6:00</td>
+                    <td id="4_periode">18:30</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Søn 06/04</td>
-                    <td>16:00 - 22:15</td>
-                    <td></td>
-                    <td>15:55</td>
-                    <td>22:18</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:15</td>
-                    <td>6:15</td>
-                    <td>24:45</td>
+                    <td id="5_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="5_dato">Søn 06/04</td>
+                    <td id="5_arbejdstid">16:00 - 22:15</td>
+                    <td id="5_fravær"></td>
+                    <td id="5_ind">15:55</td>
+                    <td id="5_ud">22:18</td>
+                    <td id="5_overtid"></td>
+                    <td id="5_ind_1"></td>
+                    <td id="5_ud_1"></td>
+                    <td id="5_overtid_1"></td>
+                    <td id="5_vagt">6:15</td>
+                    <td id="5_dagligt">6:15</td>
+                    <td id="5_periode">24:45</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Man 07/04</td>
-                    <td>12:00 - 18:00</td>
-                    <td></td>
-                    <td>11:57</td>
-                    <td>18:03</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:00</td>
-                    <td>6:00</td>
-                    <td>30:45</td>
+                    <td id="6_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="6_dato">Man 07/04</td>
+                    <td id="6_arbejdstid">12:00 - 18:00</td>
+                    <td id="6_fravær"></td>
+                    <td id="6_ind">11:57</td>
+                    <td id="6_ud">18:03</td>
+                    <td id="6_overtid"></td>
+                    <td id="6_ind_1"></td>
+                    <td id="6_ud_1"></td>
+                    <td id="6_overtid_1"></td>
+                    <td id="6_vagt">6:00</td>
+                    <td id="6_dagligt">6:00</td>
+                    <td id="6_periode">30:45</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Tirs 08/04</td>
-                    <td>10:00 - 16:15</td>
-                    <td></td>
-                    <td>09:58</td>
-                    <td>16:17</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:15</td>
-                    <td>6:15</td>
-                    <td>37:00</td>
+                    <td id="7_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="7_dato">Tirs 08/04</td>
+                    <td id="7_arbejdstid">10:00 - 16:15</td>
+                    <td id="7_fravær"></td>
+                    <td id="7_ind">09:58</td>
+                    <td id="7_ud">16:17</td>
+                    <td id="7_overtid"></td>
+                    <td id="7_ind_1"></td>
+                    <td id="7_ud_1"></td>
+                    <td id="7_overtid_1"></td>
+                    <td id="7_vagt">6:15</td>
+                    <td id="7_dagligt">6:15</td>
+                    <td id="7_periode">37:00</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Ons 09/04</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>37:00</td>
+                    <td id="8_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="8_dato">Ons 09/04</td>
+                    <td id="8_arbejdstid"></td>
+                    <td id="8_fravær"></td>
+                    <td id="8_ind"></td>
+                    <td id="8_ud"></td>
+                    <td id="8_overtid"></td>
+                    <td id="8_ind_1"></td>
+                    <td id="8_ud_1"></td>
+                    <td id="8_overtid_1"></td>
+                    <td id="8_vagt"></td>
+                    <td id="8_dagligt"></td>
+                    <td id="8_periode">37:00</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Tors 10/04</td>
-                    <td>13:30 - 19:30</td>
-                    <td></td>
-                    <td>13:26</td>
-                    <td>19:34</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:00</td>
-                    <td>6:00</td>
-                    <td>43:00</td>
+                    <td id="9_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="9_dato">Tors 10/04</td>
+                    <td id="9_arbejdstid">13:30 - 19:30</td>
+                    <td id="9_fravær"></td>
+                    <td id="9_ind">13:26</td>
+                    <td id="9_ud">19:34</td>
+                    <td id="9_overtid"></td>
+                    <td id="9_ind_1"></td>
+                    <td id="9_ud_1"></td>
+                    <td id="9_overtid_1"></td>
+                    <td id="9_vagt">6:00</td>
+                    <td id="9_dagligt">6:00</td>
+                    <td id="9_periode">43:00</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Fre 11/04</td>
-                    <td>17:00 - 23:15</td>
-                    <td></td>
-                    <td>16:58</td>
-                    <td>23:17</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:15</td>
-                    <td>6:15</td>
-                    <td>49:15</td>
+                    <td id="10_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="10_dato">Fre 11/04</td>
+                    <td id="10_arbejdstid">17:00 - 23:15</td>
+                    <td id="10_fravær"></td>
+                    <td id="10_ind">16:58</td>
+                    <td id="10_ud">23:17</td>
+                    <td id="10_overtid"></td>
+                    <td id="10_ind_1"></td>
+                    <td id="10_ud_1"></td>
+                    <td id="10_overtid_1"></td>
+                    <td id="10_vagt">6:15</td>
+                    <td id="10_dagligt">6:15</td>
+                    <td id="10_periode">49:15</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Lør 12/04</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>49:15</td>
+                    <td id="11_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="11_dato">Lør 12/04</td>
+                    <td id="11_arbejdstid"></td>
+                    <td id="11_fravær"></td>
+                    <td id="11_ind"></td>
+                    <td id="11_ud"></td>
+                    <td id="11_overtid"></td>
+                    <td id="11_ind_1"></td>
+                    <td id="11_ud_1"></td>
+                    <td id="11_overtid_1"></td>
+                    <td id="11_vagt"></td>
+                    <td id="11_dagligt"></td>
+                    <td id="11_periode">49:15</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Søn 13/04</td>
-                    <td>08:00 - 14:00</td>
-                    <td></td>
-                    <td>07:57</td>
-                    <td>14:02</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:00</td>
-                    <td>6:00</td>
-                    <td>55:15</td>
+                    <td id="12_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="12_dato">Søn 13/04</td>
+                    <td id="12_arbejdstid">08:00 - 14:00</td>
+                    <td id="12_fravær"></td>
+                    <td id="12_ind">07:57</td>
+                    <td id="12_ud">14:02</td>
+                    <td id="12_overtid"></td>
+                    <td id="12_ind_1"></td>
+                    <td id="12_ud_1"></td>
+                    <td id="12_overtid_1"></td>
+                    <td id="12_vagt">6:00</td>
+                    <td id="12_dagligt">6:00</td>
+                    <td id="12_periode">55:15</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Man 14/04</td>
-                    <td>15:00 - 21:15</td>
-                    <td></td>
-                    <td>14:56</td>
-                    <td>21:18</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:15</td>
-                    <td>6:15</td>
-                    <td>61:30</td>
+                    <td id="13_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="13_dato">Man 14/04</td>
+                    <td id="13_arbejdstid">15:00 - 21:15</td>
+                    <td id="13_fravær"></td>
+                    <td id="13_ind">14:56</td>
+                    <td id="13_ud">21:18</td>
+                    <td id="13_overtid"></td>
+                    <td id="13_ind_1"></td>
+                    <td id="13_ud_1"></td>
+                    <td id="13_overtid_1"></td>
+                    <td id="13_vagt">6:15</td>
+                    <td id="13_dagligt">6:15</td>
+                    <td id="13_periode">61:30</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Tirs 15/04</td>
-                    <td>11:30 - 17:45</td>
-                    <td></td>
-                    <td>11:28</td>
-                    <td>17:47</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:15</td>
-                    <td>6:15</td>
-                    <td>67:45</td>
+                    <td id="14_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="14_dato">Tirs 15/04</td>
+                    <td id="14_arbejdstid">11:30 - 17:45</td>
+                    <td id="14_fravær"></td>
+                    <td id="14_ind">11:28</td>
+                    <td id="14_ud">17:47</td>
+                    <td id="14_overtid"></td>
+                    <td id="14_ind_1"></td>
+                    <td id="14_ud_1"></td>
+                    <td id="14_overtid_1"></td>
+                    <td id="14_vagt">6:15</td>
+                    <td id="14_dagligt">6:15</td>
+                    <td id="14_periode">67:45</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Ons 16/04</td>
-                    <td>14:00 - 20:00</td>
-                    <td></td>
-                    <td>13:59</td>
-                    <td>20:01</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:00</td>
-                    <td>6:00</td>
-                    <td>73:45</td>
+                    <td id="15_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="15_dato">Ons 16/04</td>
+                    <td id="15_arbejdstid">14:00 - 20:00</td>
+                    <td id="15_fravær"></td>
+                    <td id="15_ind">13:59</td>
+                    <td id="15_ud">20:01</td>
+                    <td id="15_overtid"></td>
+                    <td id="15_ind_1"></td>
+                    <td id="15_ud_1"></td>
+                    <td id="15_overtid_1"></td>
+                    <td id="15_vagt">6:00</td>
+                    <td id="15_dagligt">6:00</td>
+                    <td id="15_periode">73:45</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Tors 17/04</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>73:45</td>
+                    <td id="16_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="16_dato">Tors 17/04</td>
+                    <td id="16_arbejdstid"></td>
+                    <td id="16_fravær"></td>
+                    <td id="16_ind"></td>
+                    <td id="16_ud"></td>
+                    <td id="16_overtid"></td>
+                    <td id="16_ind_1"></td>
+                    <td id="16_ud_1"></td>
+                    <td id="16_overtid_1"></td>
+                    <td id="16_vagt"></td>
+                    <td id="16_dagligt"></td>
+                    <td id="16_periode">73:45</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Fre 18/04</td>
-                    <td>10:30 - 16:45</td>
-                    <td></td>
-                    <td>10:27</td>
-                    <td>16:48</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:15</td>
-                    <td>6:15</td>
-                    <td>80:00</td>
+                    <td id="17_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="17_dato">Fre 18/04</td>
+                    <td id="17_arbejdstid">10:30 - 16:45</td>
+                    <td id="17_fravær"></td>
+                    <td id="17_ind">10:27</td>
+                    <td id="17_ud">16:48</td>
+                    <td id="17_overtid"></td>
+                    <td id="17_ind_1"></td>
+                    <td id="17_ud_1"></td>
+                    <td id="17_overtid_1"></td>
+                    <td id="17_vagt">6:15</td>
+                    <td id="17_dagligt">6:15</td>
+                    <td id="17_periode">80:00</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Lør 19/04</td>
-                    <td>16:30 - 22:45</td>
-                    <td></td>
-                    <td>16:25</td>
-                    <td>22:48</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:15</td>
-                    <td>6:15</td>
-                    <td>86:15</td>
+                    <td id="17_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="17_dato">Fre 18/04</td>
+                    <td id="17_arbejdstid">10:30 - 16:45</td>
+                    <td id="17_fravær"></td>
+                    <td id="17_ind">10:27</td>
+                    <td id="17_ud">16:48</td>
+                    <td id="17_overtid"></td>
+                    <td id="17_ind_1"></td>
+                    <td id="17_ud_1"></td>
+                    <td id="17_overtid_1"></td>
+                    <td id="17_vagt">6:15</td>
+                    <td id="17_dagligt">6:15</td>
+                    <td id="17_periode">80:00</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Søn 20/04</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>86:15</td>
+                    <td id="18_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="18_dato">Lør 19/04</td>
+                    <td id="18_arbejdstid">16:30 - 22:45</td>
+                    <td id="18_fravær"></td>
+                    <td id="18_ind">16:25</td>
+                    <td id="18_ud">22:48</td>
+                    <td id="18_overtid"></td>
+                    <td id="18_ind_1"></td>
+                    <td id="18_ud_1"></td>
+                    <td id="18_overtid_1"></td>
+                    <td id="18_vagt">6:15</td>
+                    <td id="18_dagligt">6:15</td>
+                    <td id="18_periode">86:15</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Man 21/04</td>
-                    <td>07:00 - 13:00</td>
-                    <td></td>
-                    <td>06:58</td>
-                    <td>13:03</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:00</td>
-                    <td>6:00</td>
-                    <td>92:15</td>
+                    <td id="19_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="19_dato">Søn 20/04</td>
+                    <td id="19_arbejdstid"></td>
+                    <td id="19_fravær"></td>
+                    <td id="19_ind"></td>
+                    <td id="19_ud"></td>
+                    <td id="19_overtid"></td>
+                    <td id="19_ind_1"></td>
+                    <td id="19_ud_1"></td>
+                    <td id="19_overtid_1"></td>
+                    <td id="19_vagt"></td>
+                    <td id="19_dagligt"></td>
+                    <td id="19_periode">86:15</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Tirs 22/04</td>
-                    <td>15:30 - 21:45</td>
-                    <td></td>
-                    <td>15:26</td>
-                    <td>21:49</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:15</td>
-                    <td>6:15</td>
-                    <td>98:30</td>
+                    <td id="20_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="20_dato">Man 21/04</td>
+                    <td id="20_arbejdstid">07:00 - 13:00</td>
+                    <td id="20_fravær"></td>
+                    <td id="20_ind">06:58</td>
+                    <td id="20_ud">13:03</td>
+                    <td id="20_overtid"></td>
+                    <td id="20_ind_1"></td>
+                    <td id="20_ud_1"></td>
+                    <td id="20_overtid_1"></td>
+                    <td id="20_vagt">6:00</td>
+                    <td id="20_dagligt">6:00</td>
+                    <td id="20_periode">92:15</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Ons 23/04</td>
-                    <td>12:30 - 18:30</td>
-                    <td></td>
-                    <td>12:29</td>
-                    <td>18:32</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:00</td>
-                    <td>6:00</td>
-                    <td>104:30</td>
+                    <td id="21_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="21_dato">Tirs 22/04</td>
+                    <td id="21_arbejdstid">15:30 - 21:45</td>
+                    <td id="21_fravær"></td>
+                    <td id="21_ind">15:26</td>
+                    <td id="21_ud">21:49</td>
+                    <td id="21_overtid"></td>
+                    <td id="21_ind_1"></td>
+                    <td id="21_ud_1"></td>
+                    <td id="21_overtid_1"></td>
+                    <td id="21_vagt">6:15</td>
+                    <td id="21_dagligt">6:15</td>
+                    <td id="21_periode">98:30</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Tors 24/04</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>104:30</td>
+                    <td id="22_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="22_dato">Ons 23/04</td>
+                    <td id="22_arbejdstid">12:30 - 18:30</td>
+                    <td id="22_fravær"></td>
+                    <td id="22_ind">12:29</td>
+                    <td id="22_ud">18:32</td>
+                    <td id="22_overtid"></td>
+                    <td id="22_ind_1"></td>
+                    <td id="22_ud_1"></td>
+                    <td id="22_overtid_1"></td>
+                    <td id="22_vagt">6:00</td>
+                    <td id="22_dagligt">6:00</td>
+                    <td id="22_periode">104:30</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Fre 25/04</td>
-                    <td>09:45 - 16:00</td>
-                    <td></td>
-                    <td>09:42</td>
-                    <td>16:03</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:15</td>
-                    <td>6:15</td>
-                    <td>110:45</td>
+                    <td id="23_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="23_dato">Tors 24/04</td>
+                    <td id="23_arbejdstid"></td>
+                    <td id="23_fravær"></td>
+                    <td id="23_ind"></td>
+                    <td id="23_ud"></td>
+                    <td id="23_overtid"></td>
+                    <td id="23_ind_1"></td>
+                    <td id="23_ud_1"></td>
+                    <td id="23_overtid_1"></td>
+                    <td id="23_vagt"></td>
+                    <td id="23_dagligt"></td>
+                    <td id="23_periode">104:30</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Lør 26/04</td>
-                    <td>17:30 - 23:45</td>
-                    <td></td>
-                    <td>17:28</td>
-                    <td>23:47</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:15</td>
-                    <td>6:15</td>
-                    <td>117:00</td>
+                    <td id="24_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="24_dato">Fre 25/04</td>
+                    <td id="24_arbejdstid">09:45 - 16:00</td>
+                    <td id="24_fravær"></td>
+                    <td id="24_ind">09:42</td>
+                    <td id="24_ud">16:03</td>
+                    <td id="24_overtid"></td>
+                    <td id="24_ind_1"></td>
+                    <td id="24_ud_1"></td>
+                    <td id="24_overtid_1"></td>
+                    <td id="24_vagt">6:15</td>
+                    <td id="24_dagligt">6:15</td>
+                    <td id="24_periode">110:45</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Søn 27/04</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>117:00</td>
+                    <td id="25_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="25_dato">Lør 26/04</td>
+                    <td id="25_arbejdstid">17:30 - 23:45</td>
+                    <td id="25_fravær"></td>
+                    <td id="25_ind">17:28</td>
+                    <td id="25_ud">23:47</td>
+                    <td id="25_overtid"></td>
+                    <td id="25_ind_1"></td>
+                    <td id="25_ud_1"></td>
+                    <td id="25_overtid_1"></td>
+                    <td id="25_vagt">6:15</td>
+                    <td id="25_dagligt">6:15</td>
+                    <td id="25_periode">117:00</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Man 28/04</td>
-                    <td>13:00 - 19:00</td>
-                    <td></td>
-                    <td>12:57</td>
-                    <td>19:02</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:00</td>
-                    <td>6:00</td>
-                    <td>123:00</td>
+                    <td id="26_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="26_dato">Søn 27/04</td>
+                    <td id="26_arbejdstid"></td>
+                    <td id="26_fravær"></td>
+                    <td id="26_ind"></td>
+                    <td id="26_ud"></td>
+                    <td id="26_overtid"></td>
+                    <td id="26_ind_1"></td>
+                    <td id="26_ud_1"></td>
+                    <td id="26_overtid_1"></td>
+                    <td id="26_vagt"></td>
+                    <td id="26_dagligt"></td>
+                    <td id="26_periode">117:00</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Tirs 29/04</td>
-                    <td>08:30 - 14:45</td>
-                    <td></td>
-                    <td>08:26</td>
-                    <td>14:49</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:15</td>
-                    <td>6:15</td>
-                    <td>129:15</td>
+                    <td id="27_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="27_dato">Man 28/04</td>
+                    <td id="27_arbejdstid">13:00 - 19:00</td>
+                    <td id="27_fravær"></td>
+                    <td id="27_ind">12:57</td>
+                    <td id="27_ud">19:02</td>
+                    <td id="27_overtid"></td>
+                    <td id="27_ind_1"></td>
+                    <td id="27_ud_1"></td>
+                    <td id="27_overtid_1"></td>
+                    <td id="27_vagt">6:00</td>
+                    <td id="27_dagligt">6:00</td>
+                    <td id="27_periode">123:00</td>
                 </tr>
                 <tr>
-                    <td><i class="fas fa-plus-circle"></i></td>
-                    <td>Ons 30/04</td>
-                    <td>16:00 - 22:15</td>
-                    <td></td>
-                    <td>15:58</td>
-                    <td>22:17</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6:15</td>
-                    <td>6:15</td>
-                    <td>135:30</td>
+                    <td id="28_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="28_dato">Tirs 29/04</td>
+                    <td id="28_arbejdstid">08:30 - 14:45</td>
+                    <td id="28_fravær"></td>
+                    <td id="28_ind">08:26</td>
+                    <td id="28_ud">14:49</td>
+                    <td id="28_overtid"></td>
+                    <td id="28_ind_1"></td>
+                    <td id="28_ud_1"></td>
+                    <td id="28_overtid_1"></td>
+                    <td id="28_vagt">6:15</td>
+                    <td id="28_dagligt">6:15</td>
+                    <td id="28_periode">129:15</td>
+                </tr>
+                <tr>
+                    <td id="29_"><i class="fas fa-plus-circle"></i></td>
+                    <td id="29_dato">Ons 30/04</td>
+                    <td id="29_arbejdstid">16:00 - 22:15</td>
+                    <td id="29_fravær"></td>
+                    <td id="29_ind">15:58</td>
+                    <td id="29_ud">22:17</td>
+                    <td id="29_overtid"></td>
+                    <td id="29_ind_1"></td>
+                    <td id="29_ud_1"></td>
+                    <td id="29_overtid_1"></td>
+                    <td id="29_vagt">6:15</td>
+                    <td id="29_dagligt">6:15</td>
+                    <td id="29_periode">135:30</td>
                 </tr>
             </tbody>
         </table>
     </div>
     <script src="lazy_load.js"></script>
+    <!-- <script src="generate_ids.js"></script> -->
+    <!-- <script src="Allin.js"></script> -->
 </body>
