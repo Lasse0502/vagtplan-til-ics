@@ -20,8 +20,6 @@ def strip_split(data, split_var = " "):
 #Funktion til at scrape hjemmesidens table og derefter returnere vagterne i en dictionary
 def scrape_vagter(page, table_selector):
     captured_rows = set()
-    total_height = 0
-    distance = 400
     
     #Dictionary til at opbevare vagter
     vagter = {
@@ -31,16 +29,18 @@ def scrape_vagter(page, table_selector):
         }
 
     count = 1
-    #Angiver variablen total height (længde der er scrollet) og fortæller der skal scrolles med distancen xx pr gang
-    total_height = 0 
+    #Angiver variablen scrolled height (længde der er scrollet) og fortæller der skal scrolles med distancen xx pr gang
+    scrolled_height = 0 
     distance = 400
-    #Scroll funktion skrevet i javascript til scroll gennem tabel. Stopper automatisk når den rammer bunden. Henter loadet html (tabel med lazyload)
-    while total_height < page.evaluate(f"document.querySelector('{table_selector}').scrollHeight - document.querySelector('{table_selector}').clientHeight"):
-        page.evaluate(f"document.querySelector('{table_selector}').scrollBy(0, {distance})")
-        total_height += distance
+   
+    #Mens længden der er scrolled er mindre end forskellen mellem scrollhøjden og clienthøjden scrolles og hentes dataen fra tabelen med lazyload
+    while scrolled_height < page.evaluate(f"document.querySelector('{table_selector}').scrollHeight - document.querySelector('{table_selector}').clientHeight"):
         #Henter det loadet html og kører det gennem BeatifulSoup til at parse dataen til en mere brugbar form
         current_html = page.inner_html(table_selector)
         soup = BeautifulSoup(current_html, 'html.parser')
+        #Scroller med den defineret længde og tilføjer længde til scrolled højde
+        page.evaluate(f"document.querySelector('{table_selector}').scrollBy(0, {distance})")
+        scrolled_height += distance
 
         #Finder alle rows der har et id der matcher regex i dette tilfælde alle rows med et id der indeholder "arbejdstid"
         rows = soup.find_all(id=re.compile('\d_arbejdstid'))
@@ -91,7 +91,7 @@ with sync_playwright() as playwright:
     page.get_by_placeholder("Password").press("Enter")
     # Navigere til vagtplan og vælg ønsket periode
     page.get_by_text("Vagtplan").click()
-    page.select_option("[id=period]", value="next")
+    page.select_option("[id=period]", value=periode)
     page.wait_for_timeout(2000)
     #page.select_option("#period", value="next")
 
