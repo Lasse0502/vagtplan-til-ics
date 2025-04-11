@@ -1,6 +1,6 @@
 # vagtplan-til-ics
 
-**Dette Python-script henter vagtplaner fra et websted og konverterer dem til en kalenderfil (.ics), som kan importeres til f.eks. Google Calendar.**
+**Dette Python-script henter vagtplaner fra en hjemmeside og konverterer dem til en kalenderfil (.ics), som kan importeres til f.eks. Google Calendar.**
 
 Det er vigtigt at bemærke at hjemmesiden der tages udgangspunkt i for dette projekt er en mockup hjemmeside lavet i samarbejde med AI. Mockup hjemmesiden indholder en login side, et dashboard og en vagtplan side med en tabel i et iframe. Dataen omkring vagtplanen hentes altså fra tabellen i iframet og databehandles så det bliver omdannet til en .ics fil. Scriptet er ikke i stand til at automatisk tilpasse sig selv til forskellige hjemmesider, men fungere i stedet baseret på en masse ids og classes aflæst fra hjemmesidens html kode. 
 
