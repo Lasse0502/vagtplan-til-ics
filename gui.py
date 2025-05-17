@@ -39,7 +39,7 @@ class MyGUI(tk.Tk):
 
         self.frames={}
 
-        for F in (Loginpage, page_one, page_two, page_three):
+        for F in (Loginpage, page_one, page_two, page_three, page_four):
             frame = F(main_frame, self)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
@@ -207,6 +207,7 @@ class page_three(tk.Frame):
     def __init__(self, parent, controller):
         
         tk.Frame.__init__(self, parent)
+        self.controller = controller
         self.configure(bg="#333333")
         label = tk.Label(self, text="Klar til at køre programmet", **title_style)
         label.pack(pady=15, padx=10)
@@ -231,7 +232,8 @@ class page_three(tk.Frame):
     def run_my_script(self):
         # Her skal du importere og kalde din hovedscript-funktion
         from Main_copy import my_main_function  # Ændre dette
-        my_main_function(self.update_status, self.controller.selected_period)  # Kald funktionen og send update_status
+        my_main_function(self.update_status)  # Kald funktionen og send update_status
+        self.after(0, self.process_complete)
 
     def update_status(self, message):
         # Opdater status-teksten i GUI'en (skal gøres fra hovedtråden)
@@ -241,6 +243,17 @@ class page_three(tk.Frame):
         self.progress_bar.stop()
         self.status_text.set("Processen er fuldført!")
         self.start_process_button.config(state="normal")  # Genaktiver knappen
+        self.controller.show_frame(page_four)
+
+class page_four(tk.Frame):
+
+    def __init__(self, parent, controller):
+        
+        tk.Frame.__init__(self, parent)
+        self.controller = controller
+        self.configure(bg="#333333")
+        label = tk.Label(self, text="Kalender", **title_style)
+        label.pack(pady=15, padx=10)
 
 GUI = MyGUI()
 #GUI.geometry("800x600")

@@ -4,6 +4,7 @@
 #config
 config.py
 .vscode
+login.py
 
 #temp files
 __pycache__
@@ -26,3 +27,4 @@ UKG - ics cal.zip
 vagtplan.ics
 Test
 testscript.py
+Main_copy.py
